@@ -120,7 +120,6 @@ function setMap(){
           .attr("x", 225)
           .attr("y", 40)
           .attr("class", "chartTitle")
-          .text("GDP per Capita in the Year " + expressed);
 
       //create vertical axis generator
       var yAxis = d3.svg.axis()
@@ -326,8 +325,8 @@ function updateChart(bars, n, colorScale){
             return choropleth(d, colorScale);
         })
     //create a text element for the chart title
-    var chartTitle = d3.select("chartTitle")
-        .text("State GDP(millions) in the Year " + expressed);
+    var chartTitle = d3.select(".chartTitle")
+        .text("GDP per Capita in the Year  " + expressed);
 };
 
 //function to highlight enumeration units and bars
