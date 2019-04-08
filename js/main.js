@@ -7,7 +7,7 @@ var attrArray = ["2010","2011","2012","2013","2014","2015","2016"]; //list of at
 var expressed = attrArray[0]; //initial attribute
 
 //chart frame dimensions
-var chartWidth = window.innerWidth * 0.41,
+var chartWidth = window.innerWidth * 0.408,
     chartHeight = 500,
     leftPadding = 60,
     rightPadding = 2,
@@ -117,9 +117,10 @@ function setMap(){
 
       //create a text element for the chart title
       var chartTitle = chart.append("text")
-          .attr("x", 225)
+          .attr("x", 275)
           .attr("y", 40)
           .attr("class", "chartTitle")
+
 
       //create vertical axis generator
       var yAxis = d3.svg.axis()
@@ -165,6 +166,8 @@ function makeColorScale(data){
     //assign array of expressed values as scale domain
     colorScale.domain(domainArray);
     return colorScale;
+
+
 };
 
 function setGraticule(map, path){
@@ -326,7 +329,8 @@ function updateChart(bars, n, colorScale){
         })
     //create a text element for the chart title
     var chartTitle = d3.select(".chartTitle")
-        .text("GDP per Capita in the Year  " + expressed);
+        .text("GDP in Thousands in  " + expressed)
+        .style('fill', 'White');
 };
 
 //function to highlight enumeration units and bars
@@ -367,6 +371,7 @@ function setLabel(props){
     //label content
     var labelAttribute = "<h1>" + props[expressed] +
         "</h1><b>" + expressed + "</b>";
+
 
     //create info label div
     var infolabel = d3.select("body")
